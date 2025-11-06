@@ -1,0 +1,243 @@
+/* Сброс и базовые стили */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+/* Шапка */
+.header {
+  text-align: center;
+  padding: 4rem 2rem 2rem;
+}
+
+.typewriter {
+  width: 50ch;
+  overflow: hidden;
+  white-space: nowrap;
+  margin: 0 auto 1rem;
+  animation: typing 2s steps(20), blink 0.5s step-end infinite alternate;
+  animation-iteration-count: 1;
+  border-right: 3px solid;
+}
+
+@keyframes typing {
+  from { width: 0 }
+  to { width: 50ch }
+  
+}
+
+@keyframes blink {
+  50% { border-color: transparent }
+}
+
+.header p {
+  font-size: 1.2rem;
+  opacity: 0.9;
+}
+
+/* Портфолио */
+.portfolio {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.category {
+  margin-bottom: 4rem;
+}
+
+.category h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 2rem;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+/* Сетка видео */
+.video-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  justify-content: center;
+}
+
+.video-item {
+  position: relative;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background: #000;
+  max-width: 480px;
+  margin: 0 auto;
+}
+
+.video-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.4);
+}
+
+.video-item video {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: opacity 0.3s ease;
+}
+
+/* Кнопка воспроизведения */
+.play-button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 60px;
+  height: 60px;
+  background: rgba(255,255,255,0.9);
+  border-radius: 50%;
+  opacity: 0;
+  transition: all 0.3s ease;
+  pointer-events: none; /* Чтобы клик проходил сквозь кнопку к видео */
+}
+
+.video-item:hover .play-button {
+  opacity: 0.8;
+}
+
+/* Показываем кнопку паузы когда видео играет */
+.video-item video.playing + .play-button {
+  opacity: 0;
+}
+
+/* Скрываем кнопку при наведении на играющее видео */
+.video-item video.playing:hover + .play-button {
+  opacity: 0.8;
+}
+
+.play-button::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 52%;
+  transform: translate(-50%, -50%);
+  border-style: solid;
+  border-width: 10px 0 10px 20px;
+  border-color: transparent transparent transparent white;
+}
+
+/* Меняем иконку на паузу когда видео играет */
+.video-item video.playing + .play-button::after {
+  border-style: double;
+  border-width: 0px 0 0px 15px;
+  border-color: transparent transparent transparent white;
+  left: 50%;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+  .header {
+    padding: 2rem 1rem 1rem;
+  }
+  
+  .typewriter {
+    font-size: 1.5rem;
+    width: 18ch;
+    animation: typing 1.5s steps(18);
+  }
+  
+  .portfolio {
+    padding: 1rem;
+  }
+  
+  .video-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .video-item {
+    max-width: 100%;
+  }
+  
+  .video-item video {
+    width: 100%;
+    height: auto;
+  }
+}
+/* SVG вариант */
+.video-pentagram {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 425px;
+  height: 425px;
+  opacity: 0.9;
+  pointer-events: none;
+  z-index: 4;
+  transition: all 0.3s ease;
+  filter: drop-shadow(0 0 20px rgba(255, 0, 0, 0.7));
+}
+
+.pentagram-svg {
+  width: 100%;
+  height: 100%;
+}
+
+.video-item:hover .video-pentagram {
+  opacity: 0.35;
+  transform: translate(-50%, -50%) scale(1.05);
+  filter: drop-shadow(0 0 50px rgba(255, 0, 0, 0.8));
+}
+/* Стили для 3D кнопки */
+.linkbutton {
+  text-align: center;
+  margin: 120px 0;
+  padding: 60px;
+}
+
+.center {
+  display: inline-block;
+}
+
+.btn-3d {
+  padding: 45px 90px;
+  font-size: 54px;
+  font-weight: bold;
+  color: white;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  border: none;
+  border-radius: 45px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  
+  /* 3D эффект */
+  transform-style: preserve-3d;
+  transform: translateY(-5px);
+  box-shadow: 
+    0 30px 0 rgba(86, 98, 186, 0.8),
+    0 45px 20px rgba(0, 0, 0, 0.3);
+}
+
+.btn-3d:hover {
+  background: linear-gradient(135deg, #764ba2, #667eea);
+  transform: translateY(-3px);
+  box-shadow: 
+    0 8px 0 rgba(86, 98, 186, 0.8),
+    0 36px 45px rgba(0, 0, 0, 0.3);
+}
+
+.btn-3d:active {
+  transform: translateY(0);
+  box-shadow: 
+    0 6px 0 rgba(86, 98, 186, 0.8),
+    0 15px 8px rgba(0, 0, 0, 0.2);
+}

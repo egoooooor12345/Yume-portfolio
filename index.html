@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Yume | Motion Design Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="header">
+    <h1 class="typewriter">Hi, my name is Yume and this is my portfolio</h1>
+    <p>I create motion graphics in After Effects</p>
+  </header>
+
+  <main class="portfolio">
+    <section class="category">
+      <h2>2D Graphics</h2>
+      <div class="video-grid">
+        <div class="video-item">
+          <video width="480" height="480" onclick="togglePlay(this)" preload="metadata" loop>
+            <source src="video1.mp4" type="video/mp4">
+          </video>
+          <div class="play-button" onclick="togglePlay(this.previousElementSibling)"></div>
+          <!-- Пентаграмма на весь видео-блок -->
+          <div class="video-pentagram">
+            <svg class="pentagram-svg" viewBox="0 0 100 100">
+              <circle cx="50" cy="50" r="40" fill="rgba(255,255,255,0.1)" 
+              stroke="rgba(255,255,255,0.3)"
+              stroke-width="1"/>
+
+              <path d="M50,5 L61,35 L93,35 L68,55 L79,85 L50,65 L21,85 L32,55 L7,35 L39,35 Z" 
+                    fill="rgba(255,255,255,0.15)" 
+                    stroke="rgba(255,255,255,0.3)" 
+                    stroke-width="1"/>
+            </svg>
+          </div>
+        </div>
+
+        <div class="video-item">
+          <video width="480" height="480" onclick="togglePlay(this)" preload="metadata" loop>
+            <source src="video2.mp4" type="video/mp4">
+          </video>
+          <div class="play-button" onclick="togglePlay(this.previousElementSibling)"></div>
+          <div class="video-pentagram">
+            <svg class="pentagram-svg" viewBox="0 0 100 100">
+              <circle cx="50" cy="50" r="40" fill="rgba(255,255,255,0.1)" 
+              stroke="rgba(255,255,255,0.3)"
+              stroke-width="1"/>
+                    
+                
+              <path d="M50,5 L61,35 L93,35 L68,55 L79,85 L50,65 L21,85 L32,55 L7,35 L39,35 Z" 
+                    fill="rgba(255,255,255,0.15)" 
+                    stroke="rgba(255,255,255,0.3)" 
+                    stroke-width="1"/>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="category">
+      <h2>3D Graphics</h2>
+      <div class="video-grid">
+        <div class="video-item">
+          <video width="480" height="480" onclick="togglePlay(this)" preload="metadata" loop>
+            <source src="video3.mp4" type="video/mp4">
+          </video>
+          <div class="play-button" onclick="togglePlay(this.previousElementSibling)"></div>
+          <div class="video-pentagram">
+            <svg class="pentagram-svg" viewBox="0 0 100 100">
+              <circle cx="50" cy="50" r="40" fill="rgba(255,255,255,0.1)" 
+              stroke="rgba(255,255,255,0.3)"
+              stroke-width="1"/>
+              <path d="M50,5 L61,35 L93,35 L68,55 L79,85 L50,65 L21,85 L32,55 L7,35 L39,35 Z" 
+                    fill="rgba(255,255,255,0.15)" 
+                    stroke="rgba(255,255,255,0.3)" 
+                    stroke-width="1"/>
+            </svg>
+          </div>
+        </div>
+
+        <div class="video-item">
+          <video width="480" height="480" onclick="togglePlay(this)" preload="metadata" loop>
+            <source src="video4.mp4" type="video/mp4">
+          </video>
+          <div class="play-button" onclick="togglePlay(this.previousElementSibling)"></div>
+          <div class="video-pentagram">
+            <svg class="pentagram-svg" viewBox="0 0 100 100">
+              <circle cx="50" cy="50" r="40" fill="rgba(255,255,255,0.1)" 
+              stroke="rgba(255,255,255,0.3)"
+              stroke-width="1"/>
+              <path d="M50,5 L61,35 L93,35 L68,55 L79,85 L50,65 L21,85 L32,55 L7,35 L39,35 Z" 
+                    fill="rgba(255,255,255,0.15)" 
+                    stroke="rgba(255,255,255,0.3)" 
+                    stroke-width="1"/>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <div class="linkbutton">
+    <div class="center">
+      
+      <button onclick="document.location='https://t.me/iwannadieto'" class="btn-3d">My Tg</button>
+    
+    </div>"
+  </div>"
+  <script src="script.js"></script>
+</body>
+</html>
